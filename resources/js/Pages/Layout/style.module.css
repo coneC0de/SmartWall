@@ -1,0 +1,17 @@
+.nav{
+    position: sticky;
+    top: 0;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 45px;
+    width: 100%;
+    bottom: 0;
+    background-color: #0F5499;
+    position: absolute;
+    color: #fff;
+}

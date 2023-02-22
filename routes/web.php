@@ -17,7 +17,12 @@ use Inertia\Inertia;
 */
 
 Route::get('/',function(){
-    return Inertia::render('Pocetna');
-});
+    return Inertia::render('ListaKabineta');
+})->name('/');
+
+Route::get('/kreiranje-korisnika',function(){
+    return Inertia::render('KreiranjeKorisnika');
+})->name('/kreiranje-korisnika');
+
 
 require __DIR__ . '/auth.php';

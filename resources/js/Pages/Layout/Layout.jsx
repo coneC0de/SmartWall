@@ -1,4 +1,4 @@
-import Pocetna from "../Pocetna";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import Preheader from "./Preheader";
 import Header from "./Header";
