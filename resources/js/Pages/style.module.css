@@ -12,6 +12,8 @@ body{
     width: 100%;
     background-color: #F7F7F7;
     flex-wrap: wrap;
+    padding: 30px;
+    margin-bottom: 40px;
 }
 
 .card{
@@ -20,6 +22,10 @@ body{
     background-color: #fff;
     margin: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .card:hover{

@@ -25,11 +25,11 @@ export default function Header()
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href={route('/')}>Kreiraj Kabinet</Nav.Link>
+                  <Nav.Link href={route('/kreiranje-kabineta')}>Kreiraj Kabinet</Nav.Link>
                   <Nav.Link href={route('/kreiranje-korisnika')}>Kreiraj Korisnika</Nav.Link>
-                  <Nav.Link href="#action2">Kreiraj Predmet</Nav.Link>
-                  <Nav.Link href="#action2">Kreiraj Odeljenje</Nav.Link>
-                  <Nav.Link href="#action2">Lista Kabineta</Nav.Link>
+                  <Nav.Link href={route('/kreiranje-predmeta')}>Kreiraj Predmet</Nav.Link>
+                  <Nav.Link href={route('/kreiranje-odeljenja')}>Kreiraj Odeljenje</Nav.Link>
+                  <Nav.Link href={route('/')}>Lista Kabineta</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

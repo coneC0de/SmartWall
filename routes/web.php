@@ -24,5 +24,17 @@ Route::get('/kreiranje-korisnika',function(){
     return Inertia::render('KreiranjeKorisnika');
 })->name('/kreiranje-korisnika');
 
+Route::get('/kreiranje-kabineta',function(){
+    return Inertia::render('KreiranjeKabineta');
+})->name('/kreiranje-kabineta');
+
+Route::get('/kreiranje-predmeta',function(){
+    return Inertia::render('KreiranjePredmeta');
+})->name('/kreiranje-predmeta');
+
+Route::get('/kreiranje-odeljenja',function(){
+    return Inertia::render('KreiranjeOdeljenja');
+})->name('/kreiranje-odeljenja');
+
 
 require __DIR__ . '/auth.php';
