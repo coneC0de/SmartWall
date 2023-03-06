@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import styles from "./style.module.css";
+import { Button } from 'react-bootstrap';
 
 export default function Header()
 {
@@ -25,11 +26,12 @@ export default function Header()
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href={route('/kreiranje-kabineta')}>Kreiraj Kabinet</Nav.Link>
-                  <Nav.Link href={route('/kreiranje-korisnika')}>Kreiraj Korisnika</Nav.Link>
-                  <Nav.Link href={route('/kreiranje-predmeta')}>Kreiraj Predmet</Nav.Link>
-                  <Nav.Link href={route('/kreiranje-odeljenja')}>Kreiraj Odeljenje</Nav.Link>
-                  <Nav.Link href={route('/')}>Lista Kabineta</Nav.Link>
+                  <Nav.Link className={styles.linknav} href={route('/kreiranje-kabineta')}>Kreiraj Kabinet</Nav.Link>
+                  <Nav.Link className={styles.linknav} href={route('/kreiranje-korisnika')}>Kreiraj Korisnika</Nav.Link>
+                  <Nav.Link className={styles.linknav} href={route('/kreiranje-predmeta')}>Kreiraj Predmet</Nav.Link>
+                  <Nav.Link className={styles.linknav} href={route('/kreiranje-odeljenja')}>Kreiraj Odeljenje</Nav.Link>
+                  <Nav.Link className={styles.linknav} href={route('/')}>Lista Kabineta</Nav.Link>
+                  <Button><a  className={styles.loginbtn} href={route('/')}>Logovanje</a></Button>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

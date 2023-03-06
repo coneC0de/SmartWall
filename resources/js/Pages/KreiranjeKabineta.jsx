@@ -1,12 +1,14 @@
 
+import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Col, Container, Row } from "react-bootstrap";
-import Layout from "./Layout/Layout";
 import styles from "./style.module.css";
 
 
-export default function KreiranjeKabineta()
+export default function KreiranjeKabineta(props)
 {
-    return(<Layout>
+    return(<Authenticated
+        auth={props.auth}
+    >
         <div className={styles.content}>
             <Container>
                 <Row>
@@ -19,8 +21,5 @@ export default function KreiranjeKabineta()
                 </Row>
             </Container>
         </div>
-
-
-
-    </Layout>)
+    </Authenticated>);
 }

@@ -16,25 +16,28 @@ use Inertia\Inertia;
 |
 */
 
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
 Route::get('/',function(){
-    return Inertia::render('ListaKabineta');
+    return Inertia::render('Auth/Login');
 })->name('/');
 
-Route::get('/kreiranje-korisnika',function(){
-    return Inertia::render('KreiranjeKorisnika');
-})->name('/kreiranje-korisnika');
 
-Route::get('/kreiranje-kabineta',function(){
-    return Inertia::render('KreiranjeKabineta');
-})->name('/kreiranje-kabineta');
-
-Route::get('/kreiranje-predmeta',function(){
-    return Inertia::render('KreiranjePredmeta');
-})->name('/kreiranje-predmeta');
-
-Route::get('/kreiranje-odeljenja',function(){
-    return Inertia::render('KreiranjeOdeljenja');
-})->name('/kreiranje-odeljenja');
-
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

@@ -1,11 +1,13 @@
+import Authenticated from "@/Layouts/AuthenticatedLayout";
 import React from "react";
 import { Container,Row,Col } from "react-bootstrap";
-import Layout from "./Layout/Layout";
 import styles from "./style.module.css";
 
-export default function ListaKabineta()
+export default function ListaKabineta(props)
 {
-    return(<Layout>
+    return(<Authenticated
+        auth={props.auth}
+    >
         <div className={styles.content}>
             <Container>
                 <Row>
@@ -35,5 +37,5 @@ export default function ListaKabineta()
                 </Row>
             </Container>    
         </div>
-    </Layout>);
+    </Authenticated>);
 }

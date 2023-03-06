@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -56,4 +57,26 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+
+
+// ovo je deo za dashboard
+
+                Route::get('/kreiranje-kabineta',function(){
+                    return Inertia::render('KreiranjeKabineta');
+                })->name('/kreiranje-kabineta');
+                
+                Route::get('/kreiranje-predmeta',function(){
+                    return Inertia::render('KreiranjePredmeta');
+                })->name('/kreiranje-predmeta');
+                
+                Route::get('/kreiranje-odeljenja',function(){
+                    return Inertia::render('KreiranjeOdeljenja');
+                })->name('/kreiranje-odeljenja');
+                
+                Route::get('/lista-kabineta',function(){
+                    return Inertia::render('ListaKabineta');
+                })->name('/lista-kabineta');
+
+
+
 });

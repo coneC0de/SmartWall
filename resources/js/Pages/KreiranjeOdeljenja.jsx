@@ -1,11 +1,13 @@
+import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Col, Container, Row } from "react-bootstrap";
-import Layout from "./Layout/Layout";
 import styles from "./style.module.css";
 
 
-export default function KreiranjeOdeljenja()
+export default function KreiranjeOdeljenja(props)
 {
-    return(<Layout>
+    return(<Authenticated
+        auth={props.auth}
+    >
         <div className={styles.content}>
             <Container>
                 <Row>
@@ -18,8 +20,5 @@ export default function KreiranjeOdeljenja()
                 </Row>
             </Container>
         </div>
-
-
-
-    </Layout>)
+    </Authenticated>)
 }
