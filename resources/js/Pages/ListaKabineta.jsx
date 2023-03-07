@@ -12,7 +12,7 @@ export default function ListaKabineta(props)
             <Container>
                 <Row>
                     <Col sm={12}>
-                    <h3>Lista Kabineta</h3>
+                            <h3>Lista Kabineta</h3>
                         <div className={styles.container}>
                                 <div className={styles.card}>
                                     K1

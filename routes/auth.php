@@ -77,6 +77,9 @@ Route::middleware('auth')->group(function () {
                     return Inertia::render('ListaKabineta');
                 })->name('/lista-kabineta');
 
+                Route::get('/pocetna',function(){
+                    return Inertia::render('Dashboard');
+                })->name('/pocetna');
 
 
 });

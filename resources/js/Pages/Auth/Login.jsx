@@ -80,15 +80,21 @@ export default function Login({ status, canResetPassword }) {
                 <div className="flex items-center justify-end mt-4">
                     {canResetPassword && (
                         <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            href={route("password.request")}
+                            className="underline text-sm mr-auto rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                            Zaboravili ste Vasu lozinku ?
+                            Zaboravili ste lozinku?
                         </Link>
                     )}
+                    <Link
+                        href={route("register")}
+                        className="underline text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                        Registracija
+                    </Link>
 
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Log in
+                    <PrimaryButton className="ml-4" processing={processing}>
+                        Prijava
                     </PrimaryButton>
                 </div>
             </form>

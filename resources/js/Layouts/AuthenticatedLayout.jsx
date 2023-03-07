@@ -5,6 +5,7 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
 import styles from "./style.module.css";
+import Footer from '@/Pages/Layout/Footer';
 
 export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
@@ -22,6 +23,9 @@ export default function Authenticated({ auth, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink className={styles.navlinks} href={route('/pocetna')} active={route().current('/pocetna')}>
+                                    Početna
+                                </NavLink>
                                 <NavLink className={styles.navlinks} href={route('/kreiranje-kabineta')} active={route().current('/kreiraje-kabineta')}>
                                     Kreiranje Kabineta
                                 </NavLink>
@@ -102,24 +106,39 @@ export default function Authenticated({ auth, header, children }) {
 
                 <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
                     <div className="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
-                            Dashboard
+                        <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')} className={styles.navlinks}>
+                            Početna
                         </ResponsiveNavLink>
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
                         <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">
+                            <div className={styles.navlinks}>
                                 {auth.user.name}
                             </div>
-                            <div className="font-medium text-sm text-gray-500">{auth.user.email}</div>
+                            <div className={styles.navlinks}>{auth.user.email}</div>
                         </div>
 
                         <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink href={route('profile.edit')}>Profile</ResponsiveNavLink>
-                            <ResponsiveNavLink method="post" href={route('logout')} as="button">
+                            <ResponsiveNavLink href={route('profile.edit')} className={styles.navlinks}>Profile</ResponsiveNavLink>
+                            <ResponsiveNavLink  method="post" href={route('logout')} as="button" className={styles.navlinks}>
                                 Log Out
                             </ResponsiveNavLink>
+                            
+                            <div className='pt-4 pb-1 border-t border-gray-200'>
+                                <ResponsiveNavLink className={styles.navlinks} href={route('/kreiranje-kabineta')} as="button">
+                                    Kreiranje Kabineta
+                                </ResponsiveNavLink>
+                                <ResponsiveNavLink className={styles.navlinks} href={route('/kreiranje-odeljenja')} as="button">
+                                    Kreiranje Odeljenja
+                                </ResponsiveNavLink>
+                                <ResponsiveNavLink className={styles.navlinks} href={route('/kreiranje-predmeta')} as="button">
+                                    Kreiranje Predmeta
+                                </ResponsiveNavLink>
+                                <ResponsiveNavLink className={styles.navlinks} href={route('/lista-kabineta')} as="button">
+                                    Lista Kabineta
+                                </ResponsiveNavLink>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,6 +151,8 @@ export default function Authenticated({ auth, header, children }) {
             )}
 
             <main>{children}</main>
+            
+            <Footer></Footer>
         </div>
     );
 }

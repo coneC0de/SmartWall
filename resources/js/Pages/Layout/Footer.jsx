@@ -6,7 +6,7 @@ export default function Footer(){
         <Container>
             <Row>
                 <Col sm={12}>
-                    Footer
+                    
                 </Col>
             </Row>
         </Container>

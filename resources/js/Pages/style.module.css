@@ -7,7 +7,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     min-height: 300px;
     width: 100%;
     background-color: #F7F7F7;
@@ -34,4 +33,7 @@ body{
 
 .content{
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

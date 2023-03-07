@@ -13,20 +13,18 @@ export default function Dashboard(props) {
             errors={props.errors}
         >
             <Head title="Početna" />
-
-            <Container>
-                <Row>
-                    <Col sm={12}>
-
-                        <div className={styles.test}>
-                            <h2>Test</h2>
-                        </div>
-
-                    </Col>
-                </Row>
-            </Container>
-
-            <Footer></Footer>
+                <div className={styles.content}>
+                    <Container>
+                        <Row>
+                            <Col sm={12}>
+                                    <h3>Welcome to HomePage !</h3>
+                                    <div className={styles.container}>
+                                        <p>Home</p>
+                                    </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
         </AuthenticatedLayout>
     );
 }
