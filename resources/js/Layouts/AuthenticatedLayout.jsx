@@ -38,6 +38,12 @@ export default function Authenticated({ auth, header, children }) {
                                 <NavLink className={styles.navlinks} href={route('/lista-kabineta')} active={route().current('/lista-kabineta')}>
                                     Lista Kabineta
                                 </NavLink>
+                                <NavLink className={styles.dangerlink} href={route('/prijava-problema')} active={route().current('/prijava-problema')}>
+                                    Prijava Problema
+                                </NavLink>
+                                <NavLink className={styles.navlinks} href={route('/zahtevi')} active={route().current('/zahtevi')}>
+                                    Zahtevi
+                                </NavLink>
                             </div>
                         </div>
 

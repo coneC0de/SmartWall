@@ -1,7 +1,15 @@
-.nav{
-    position: sticky;
-    top: 0;
+*{
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
+
+body{
+    position: relative;
+    min-height: 100vh;
+}
+
 
 .footer{
     display: flex;
@@ -13,9 +21,5 @@
     bottom: 0;
     background-color: #0F5499;
     position: absolute;
-    color: #fff;
-}
-
-.loginbtn{
     color: #fff;
 }

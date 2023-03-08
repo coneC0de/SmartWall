@@ -1,5 +1,21 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+}
+
 .navlinks{
     color:cyan;
     font-weight: bolder;
-    list-style: none;
+}
+
+.dangerlink{
+    color: red;
+    font-weight: bolder;
 }

@@ -1,6 +1,13 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
 body{
-    min-height: 100vh;
     position: relative;
+    min-height: 100vh;
 }
 
 .container{
