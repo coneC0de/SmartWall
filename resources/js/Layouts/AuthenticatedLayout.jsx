@@ -6,10 +6,28 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
 import styles from "./style.module.css";
 import Footer from '@/Pages/Layout/Footer';
+import { IoArrowUp } from "react-icons/io5";
 
 export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
+    const [visible, setVisible] = useState(false);
+
+    const toggleVisible = () => {
+        const scrolled = document.documentElement.scrollTop;
+        if (scrolled > 300) {
+            setVisible(true);
+        } else if (scrolled <= 300) {
+            setVisible(false);
+        }
+    };
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+    window.addEventListener("scroll", toggleVisible);
     return (
         <div className="min-h-screen bg-white" id={styles.content}>
             <nav className="bg-white border-b border-gray-100">
@@ -17,7 +35,7 @@ export default function Authenticated({ auth, header, children }) {
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
-                                <Link href="/">
+                                <Link href={route('/pocetna')}>
                                     <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
                                 </Link>
                             </div>
@@ -156,8 +174,19 @@ export default function Authenticated({ auth, header, children }) {
                 </header>
             )}
 
-            <main>{children}</main>
+            <main>
+                {children}
+                
+                <button
+                        style={{ display: visible ? "inline" : "none" }}
+                        onClick={scrollToTop}
+                        className={styles.scroll}
+                    >
+                        <IoArrowUp></IoArrowUp>
+                    </button>
+                </main>
             
+
             <Footer></Footer>
         </div>
     );
