@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\OdeljenjeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,14 @@ Route::middleware('auth')->group(function () {
 Route::get('/',function(){
     return Inertia::render('Auth/Login');
 })->name('/');
+
+//ODELJENJE
+
+Route::POST('add',[OdeljenjeController::class,'AddOdeljenje']);
+
+
+
+
 
 
 require __DIR__.'/auth.php';
