@@ -1,11 +1,35 @@
 
 import Authenticated from "@/Layouts/AuthenticatedLayout";
+import { useForm, usePage, Head } from "@inertiajs/react";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./style.module.css";
 
 
+
 export default function KreiranjeKabineta(props)
 {
+    const {data,setData,post} = useForm({
+        naziv_kabineta:"",
+        sprat:"",
+        br_racunara:"",
+    }); 
+
+    const { errors: formErrors, flash } = usePage().props;
+
+    const onChange = (event) => {
+        setData(
+            event.target.name,
+            event.target.type === "checkbox"
+                ? event.target.checked
+                : event.target.value
+        );
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        post(route('/kabineti'));
+    };
+
     return(<Authenticated
         auth={props.auth}
     >

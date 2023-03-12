@@ -1,12 +1,33 @@
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./style.module.css";
+import { useForm, usePage, Head } from "@inertiajs/react";
+
 
 
 export default function KreiranjeOdeljenja(props)
 {
 
-    
+    const{data,setData,post} = useForm({
+        naziv_odeljenja : "",
+        razredni_staresina : "",
+    });
+
+    const { errors: formErrors, flash } = usePage().props;
+
+    const onChange = (event) => {
+        setData(
+            event.target.name,
+            event.target.type === "checkbox"
+                ? event.target.checked
+                : event.target.value
+        );
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        post(route('/kabineti'));
+    };
 
 
     return(<Authenticated

@@ -1,3 +1,4 @@
+import PrimaryButton from "@/Components/PrimaryButton";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import React from "react";
 import { Container,Row,Col } from "react-bootstrap";
@@ -33,6 +34,13 @@ export default function ListaKabineta(props)
                                     K6
                                 </div>
                         </div>
+
+                        <div>
+                            <PrimaryButton>
+                                <a href={route('/kabineti')}>Kabineti</a>
+                            </PrimaryButton>
+                        </div>
+
                     </Col>
                 </Row>
             </Container>    

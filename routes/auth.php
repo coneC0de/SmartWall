@@ -81,11 +81,15 @@ Route::middleware('auth')->group(function () {
                     return Inertia::render('Dashboard');
                 })->name('/pocetna');
 
-                Route::get('/zahtevi',function(){
-                    return Inertia::render('Zahtevi');
-                })->name('/zahtevi');
-
                 Route::get('/prijava-problema',function(){
                     return Inertia::render('PrijavaProblema');
                 })->name('/prijava-problema');
 });
+
+Route::get('/zahtevi',function(){
+    return Inertia::render('Zahtevi');
+})->name('/zahtevi');
+
+Route::get('/kabineti',function(){
+    return Inertia::render('Kabineti');
+})->name('/kabineti');
